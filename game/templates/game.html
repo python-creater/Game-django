@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game page</title>
+</head>
+<body>
+    
+    <canvas>
+        
+    </canvas>
+
+    <style>
+        body{
+            zoom: 1;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+            document.body.style.backgroundColor = 'Red';
+        })
+        window.addEventListener('wheel', function(event) {
+            if (event.ctrlKey) {
+                event.preventDefault(); // Ctrl + Scroll bilan zoom qilishni to‘xtatadi
+            }
+        }, { passive: false });
+
+    </script>
+</body>
+</html>
