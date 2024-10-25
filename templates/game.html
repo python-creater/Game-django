@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'icons/battle-icon.png' %}">
+    <title>Game page</title>
+</head>
+<body>
+    
+    <canvas id="canvas1"></canvas>
+
+    
+
+    <style>
+        body{
+            zoom: 1;
+        }
+        #canvas1{
+            position: absolute;
+            background: black;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            
+        }
+        img{
+            display: none;
+        }
+    </style>
+
+    <script>
+
+
+        const canvas = document.getElementById('canvas1');
+        const ctx = canvas.getContext('2d');
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+        let particleArray = [];
+        let hue = 0;
+
+
+        
+        function animation(){
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            requestAnimationFrame(animation);
+        }
+        
+        animation();
+
+        window.addEventListener('wheel', function(event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+
+    </script>
+</body>
+</html>
